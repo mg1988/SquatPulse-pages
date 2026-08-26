@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SquatPulse</title>
+  <style>
+    :root { color-scheme: light dark; --ink: #16243b; --muted: #5d6b82; --line: #dbe3ef; --panel: #f6f9fd; --accent: #2563eb; }
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; display: grid; place-items: center; margin: 0; padding: 24px; background: #ffffff; color: var(--ink); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    main { width: min(620px, 100%); padding: 40px; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); text-align: center; }
+    h1 { margin: 0; font-size: clamp(34px, 7vw, 52px); letter-spacing: -.03em; }
+    p { color: var(--muted); }
+    nav { display: grid; gap: 12px; margin-top: 28px; }
+    a { display: block; padding: 14px 16px; border-radius: 14px; background: #2563eb; color: #fff; font-weight: 650; text-decoration: none; }
+    a.secondary { background: transparent; color: var(--accent); border: 1px solid var(--line); }
+    @media (prefers-color-scheme: dark) { :root { --ink: #e5ecf7; --muted: #aab6c8; --line: #2c3a51; --panel: #182438; --accent: #86b7ff; } body { background: #0d1523; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>SquatPulse</h1>
+    <p>本地深蹲训练计数与记录工具<br><span lang="en">An on-device squat training companion.</span></p>
+    <nav aria-label="SquatPulse public information">
+      <a href="support.html">支持与联系我们 / Support</a>
+      <a class="secondary" href="privacy.html">隐私政策 / Privacy Policy</a>
+    </nav>
+  </main>
+</body>
+</html>
