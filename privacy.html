@@ -31,9 +31,9 @@
   <main>
     <header>
       <h1>SquatPulse Privacy Policy</h1>
-      <p class="meta">Last updated: November 25, 2026 · Applies to SquatPulse 2.0 (build 9) and later, on iPhone, iPad and Apple Watch, including widgets, Live Activities and Siri shortcuts · First published: August 26, 2026</p>
+      <p class="meta">Last updated: November 26, 2026 · Applies to SquatPulse 2.0 (build 9) and later, on iPhone, iPad and Apple Watch, including widgets, Live Activities and Siri shortcuts · First published: August 26, 2026</p>
       <p class="language"><a href="#chinese">中文版（蹲咚）</a></p>
-      <p class="notice"><strong>In short:</strong> SquatPulse has no account, no server, no ads, no analytics and no tracking. Camera frames and sensor readings are processed on your device and never uploaded. Your workout data stays on your device unless <em>you</em> choose to export it, share it, or write workouts to Apple Health.</p>
+      <p class="notice"><strong>In short:</strong> SquatPulse has no account, no server that receives your data, no ads, no analytics and no tracking. It may download a public price-notice file; that request carries no personal data. Camera frames and sensor readings are processed on your device and never uploaded. Your workout data stays on your device unless <em>you</em> choose to export it, share it, or write workouts to Apple Health.</p>
     </header>
 
     <section>
@@ -56,22 +56,23 @@
           <tr><td>Workout records, settings and game progress</td><td>History, daily goal, streaks, challenges (including custom ones), companion and monster progress, squat-off results, personal records, set training, Pro style choices, app icon choice, language, reminder time, sensitivity, and whether a review prompt was already shown.</td><td>Stored in the app’s local storage on your device (and in a shared container so widgets and the Apple Watch app can read the summary). Not uploaded.</td></tr>
           <tr><td>Widgets, Live Activities and Apple Watch app</td><td>Showing today’s count, goal, streak, the last 7 days, your latest workout and the live count on the Home Screen, Lock Screen, Dynamic Island and Apple Watch. The Watch app also keeps its own local workout history.</td><td>A summary with numbers only (no images, no workout notes) is kept in a shared container on your device. Anyone who can see your screen can see what widgets and Live Activities show; you can remove them or turn Live Activities off in system settings at any time.</td></tr>
           <tr><td>Siri, Shortcuts and App Intents</td><td>Starting a workout, or reading today’s count, by voice or from a Shortcut.</td><td>The request is handled by Apple’s Siri / Shortcuts on your device. SquatPulse returns only numbers already stored locally. We never receive or store your voice, and no audio is recorded by the app.</td></tr>
-          <tr><td>Apple Health — writing workouts (optional, off by default)</td><td>When you turn on Apple Health, each finished workout is saved to Health as a strength-training workout with its start time, end time and duration.</td><td>Written to Apple Health on your device, which Apple manages. See section 4 for the exact fields, including the difference between iPhone and Apple Watch.</td></tr>
-          <tr><td>Workout session (iOS 26 and later, Pocket mode)</td><td>To keep counting while the screen is locked, SquatPulse runs a HealthKit workout session during Pocket workouts when “Screen-off counting” is on. This needs Health permission for Workouts, and the system may ask whether workout data can stay available while your device is locked.</td><td>The session only keeps the app running. SquatPulse does not use it to save a workout or to read any health data. If you turn off Screen-off counting or decline the permission, workouts pause automatically when the device locks instead.</td></tr>
+          <tr><td>Apple Health — saving workouts (optional, off by default)</td><td>When you turn on Apple Health, each finished workout is saved to Health as a Functional Strength Training workout with its start time, end time, duration and rep count, plus active energy when the system measures it.</td><td>Written to Apple Health on your device, which Apple manages. See section 4 for the exact fields, including the difference between iPhone and Apple Watch.</td></tr>
+          <tr><td>Workout recording (iOS 26 and later, Pocket mode)</td><td>When both Apple Health and “Screen-off counting” are on, SquatPulse records each Pocket workout live with a HealthKit workout session. Because the workout is being recorded, counting continues while the screen is locked. The system may ask whether workout data can stay available while your device is locked.</td><td>When the workout ends, the recording is saved to Apple Health as described in section 4. If you abandon the workout, the recording is discarded. If Apple Health or Screen-off counting is off, or you decline the permission, no session runs and Pocket workouts pause automatically when the device locks.</td></tr>
           <tr><td>Voice announcements</td><td>Reading out your count and challenge cues.</td><td>Generated on the device by iOS speech synthesis. SquatPulse does not use the microphone.</td></tr>
           <tr><td>Daily reminder (optional)</td><td>A daily notification at the time you choose.</td><td>Scheduled locally by the system on your device. The reminder text may be visible on your Lock Screen; you can turn it off in the app or in system settings.</td></tr>
           <tr><td>Purchases (SquatPulse Pro, tips)</td><td>Unlocking Pro and supporting the app.</td><td>Payments are handled entirely by Apple. We never see your payment details or Apple ID. Pro is a one-time purchase, not a subscription, so nothing renews automatically. The app checks purchases on the device through StoreKit and remembers the unlock status locally. Apple provides developers with sales reports that do not identify you.</td></tr>
+<tr><td>Public price notice</td><td>Showing the current Pro price and, when applicable, a launch discount in the paywall.</td><td>The current price comes from Apple StoreKit. A small static text file may be downloaded from our public web page to display a reference price and promotion label. That request contains no personal data, device identifier or workout information, and nothing is uploaded; we do not operate a server that receives your data.</td></tr>
         </tbody>
       </table>
       <p class="notice"><strong>About face data:</strong> SquatPulse <strong>does not collect, detect, analyze, store or upload face data</strong>. It uses only Apple Vision’s <code>VNDetectHumanBodyPoseRequest</code> (body pose) and <code>VNDetectHumanHandPoseRequest</code> (hand pose). It does not call <code>VNDetectFaceRectanglesRequest</code>, <code>VNDetectFaceLandmarksRequest</code>, <code>VNDetectFaceCaptureQualityRequest</code> or any other face detection or recognition API, and does not use <code>CIDetector</code> for faces.</p>
 
       <h2>4. Apple Health in detail</h2>
       <ul>
-        <li><strong>Write-only.</strong> The app requests permission to save workouts and reads nothing from Apple Health. There is no read permission to grant, and health data is never used for advertising or analytics.</li>
-        <li><strong>iPhone:</strong> the saved workout contains the activity type (strength training), start time, end time and duration. Rep counts, heart rate and calories are not written.</li>
-        <li><strong>Apple Watch:</strong> the saved workout contains the same fields, plus the rep count of that session stored as a custom metadata field on the workout. The Health app does not display this field, but it is kept with the workout in your Health database and is visible to apps you grant access to.</li>
-        <li><strong>Screen-off counting on iOS 26:</strong> the workout session exists only to keep counting while the screen is locked. It does not create a Health workout by itself and does not read health data.</li>
-        <li><strong>If you decline:</strong> nothing is written to Health, and Pocket workouts pause when the device locks.</li>
+        <li><strong>What is read.</strong> On iPhone and iPad, SquatPulse asks to save workouts and active energy, and to read active energy only. It uses that read access solely to show the active energy of the workout it just recorded on the workout summary. It does not read any other health data. On Apple Watch, the app only saves workouts and reads nothing. Health data is never used for advertising or analytics and never leaves your device through SquatPulse.</li>
+        <li><strong>iPhone and iPad:</strong> the saved workout contains the activity type (Functional Strength Training), start time, end time, duration and active energy (only when the system measures it; SquatPulse never estimates calories). The rep count, the number of sets, the reps in each set and the training mode (Pocket or Camera) are stored as custom metadata fields on the workout. The Health app does not display these fields, but they are kept with the workout in your Health database and are visible to apps you grant access to. Heart rate is not written.</li>
+        <li><strong>Apple Watch:</strong> the saved workout contains the activity type (Functional Strength Training), start time, end time and duration, plus the rep count of that session stored as a custom metadata field on the workout. The Health app does not display this field, but it is kept with the workout in your Health database and is visible to apps you grant access to.</li>
+        <li><strong>Pocket workouts on iOS 26:</strong> the workout session records the workout as it happens and ends with the workout being saved to Apple Health. It only runs when Apple Health is on. Recording the workout is also what lets counting continue while the screen is locked.</li>
+        <li><strong>If you decline:</strong> nothing is written to Health, Pocket workouts pause when the device locks, and your workouts are still kept in the history on your device. The workout summary tells you when a workout was not saved to Health.</li>
       </ul>
 
       <h2>5. Information you choose to share</h2>
@@ -85,7 +86,7 @@
 
       <h2>6. No account, ads, analytics or tracking</h2>
       <p>SquatPulse does not require an account and contains no advertising SDK, no third-party analytics or crash-reporting SDK, and no cross-app tracking. It does not use the Advertising Identifier (IDFA), does not ask for App Tracking Transparency permission, and does not include social login or Game Center. There is no server of ours to receive your data, and we do not sell, rent or share your information.</p>
-      <p>Because we operate no server, there is no transfer of your data across borders by us. If you use iCloud or computer backups, the app’s local data is included in those backups under Apple’s settings and policies; that is not a transfer to us.</p>
+      <p>Because we operate no server that receives your data, there is no transfer of your personal data across borders by us. If you use iCloud or computer backups, the app’s local data is included in those backups under Apple’s settings and policies; that is not a transfer to us.</p>
 
       <h2>7. Permissions</h2>
       <table>
@@ -93,7 +94,7 @@
         <tbody>
           <tr><td>Camera</td><td>When you start Camera mode, a companion challenge or a squat-off.</td><td>Those features won’t work; Pocket mode still does.</td></tr>
           <tr><td>Motion &amp; Fitness</td><td>When you start Pocket mode.</td><td>Pocket mode won’t work; Camera mode still does.</td></tr>
-          <tr><td>Health (write Workouts only)</td><td>When you turn on Apple Health, or before your first Pocket workout on iOS 26 with Screen-off counting on.</td><td>Nothing is written to Health, and Pocket workouts pause when the device locks.</td></tr>
+          <tr><td>Health (save Workouts and Active Energy; read Active Energy)</td><td>When you turn on Apple Health, or before your first Pocket workout on iOS 26 with Apple Health and Screen-off counting on. After updating, you may be asked once more for Active Energy.</td><td>Nothing is written to Health, and Pocket workouts pause when the device locks.</td></tr>
           <tr><td>Notifications</td><td>When you turn on the daily reminder.</td><td>No reminders are sent.</td></tr>
           <tr><td>Siri &amp; Shortcuts</td><td>When you use a SquatPulse voice or Shortcut action for the first time.</td><td>The actions are unavailable; the app itself works normally.</td></tr>
         </tbody>
@@ -124,6 +125,7 @@
       <h2>13. Changes to this policy</h2>
       <p>If we ever add an account, cloud sync, analytics, advertising or any other feature that changes how data is handled, we will update this policy, the in-app privacy page and the App Store privacy details before that feature is released.</p>
       <p><strong>Changes in 2.0:</strong> this version adds coverage for the Apple Watch app, the companion game, the two-player squat-off, Pro and custom challenges, and Siri / Shortcuts. It also states precisely which fields are written to Apple Health on iPhone and on Apple Watch.</p>
+      <p><strong>Update of November 26, 2026:</strong> on iPhone and iPad, workouts are now saved as Functional Strength Training with the rep count, sets and active energy, and Pocket workouts on iOS 26 are recorded live with a workout session. SquatPulse now reads the active energy of the workouts it records, to show it on the summary. The workout session only runs when Apple Health is on.</p>
 
       <h2>14. Contact</h2>
       <p>Questions or requests: <a href="mailto:genweimi@gmail.com">genweimi@gmail.com</a></p>
@@ -133,8 +135,8 @@
 
     <section id="chinese" lang="zh-CN">
       <h1>蹲咚（SquatPulse）隐私政策</h1>
-      <p class="meta">更新日期：2026 年 11 月 25 日 · 适用于蹲咚 2.0（build 9）及以后版本，覆盖 iPhone、iPad、Apple Watch，以及小组件、实时活动和 Siri 快捷指令 · 首次发布：2026 年 8 月 26 日</p>
-      <p class="notice"><strong>简单说：</strong>蹲咚不需要注册账号，没有服务器、广告、统计或追踪。相机画面和传感器数据只在你的设备上处理，不会上传。除非<strong>你自己</strong>选择导出、分享或写入 Apple 健康，训练数据不会离开你的设备。</p>
+      <p class="meta">更新日期：2026 年 11 月 26 日 · 适用于蹲咚 2.0（build 9）及以后版本，覆盖 iPhone、iPad、Apple Watch，以及小组件、实时活动和 Siri 快捷指令 · 首次发布：2026 年 8 月 26 日</p>
+      <p class="notice"><strong>简单说：</strong>蹲咚不需要注册账号，没有接收你数据的服务器，也没有广告、统计或追踪。应用可能下载一份公开的价格公告文件，请求里不含个人信息。相机画面和传感器数据只在你的设备上处理，不会上传。除非<strong>你自己</strong>选择导出、分享或写入 Apple 健康，训练数据不会离开你的设备。</p>
 
       <h2>1. 适用范围</h2>
       <p>本政策适用于蹲咚（英文名 SquatPulse）在 iPhone、iPad 和 Apple Watch 上的应用，以及它的主屏幕、锁屏、灵动岛小组件、实时活动和 Siri／快捷指令动作。本应用通过口袋模式（运动传感器）或相机模式（本机姿态识别）统计深蹲次数，并提供训练记录、挑战、伙伴游戏、双人比拼和可选的 Pro 功能。</p>
@@ -155,22 +157,23 @@
           <tr><td>训练记录、设置与游戏进度</td><td>训练历史、每日目标、连续天数、挑战（含自定义挑战）、伙伴与怪物进度、双人比拼结果、个人纪录、分组训练、Pro 样式选择、App 图标选择、语言、提醒时间、灵敏度，以及是否已显示过评分提示。</td><td>保存在你设备上的本应用存储中（另有一份摘要放在共享容器里，供小组件和 Apple Watch 应用读取）。不上传。</td></tr>
           <tr><td>小组件、实时活动与 Apple Watch 应用</td><td>在主屏幕、锁屏、灵动岛和 Apple Watch 上显示今日次数、目标、连续天数、近 7 天、最近一次训练和实时计数。手表应用也会在本机保存自己的训练历史。</td><td>一份只有数字、不含图片和训练备注的摘要保存在你设备上的共享容器里。能看到你屏幕的人也能看到小组件和实时活动的内容；你可以随时移除，或在系统设置中关闭实时活动。</td></tr>
           <tr><td>Siri、快捷指令与 App Intents</td><td>用语音或快捷指令开始训练，或查询今日次数。</td><td>请求由 Apple 的 Siri／快捷指令在你的设备上处理，本应用只返回已经存在本机的数字。我们不会收到或保存你的语音，本应用也不录音。</td></tr>
-          <tr><td>Apple 健康：写入体能训练（可选，默认关闭）</td><td>在设置中打开“Apple 健康”后，每次训练结束会写入一条力量训练记录，包括开始时间、结束时间和时长。</td><td>写入你设备上的 Apple 健康，由 Apple 管理。具体写入字段见第 4 节，含 iPhone 与 Apple Watch 的差别。</td></tr>
-          <tr><td>体能训练会话（iOS 26 及以后，口袋模式）</td><td>为了锁屏后继续计数，在“熄屏计数”开启时，口袋训练期间本应用会运行一个 HealthKit 体能训练会话。这需要“健康”中“体能训练”的写入权限，系统也可能询问是否允许锁屏时继续获取训练数据。</td><td>这个会话只用来让本应用在锁屏后继续运行，不会因此保存训练记录，也不会读取任何健康数据。关闭“熄屏计数”或不授权时，锁屏后训练会自动暂停。</td></tr>
+          <tr><td>Apple 健康：写入体能训练（可选，默认关闭）</td><td>在设置中打开“Apple 健康”后，每次训练结束会写入一条“功能性力量训练”记录，包括开始时间、结束时间、时长和深蹲次数；系统测得活动能量时一并写入。</td><td>写入你设备上的 Apple 健康，由 Apple 管理。具体写入字段见第 4 节，含 iPhone 与 Apple Watch 的差别。</td></tr>
+          <tr><td>体能训练记录（iOS 26 及以后，口袋模式）</td><td>“Apple 健康”和“熄屏计数”都开启时，蹲咚会用 HealthKit 体能训练会话实时记录每次口袋训练。因为训练正在被记录，锁屏后也能继续计数。系统可能询问是否允许锁屏时继续获取训练数据。</td><td>训练结束时，这次记录会按第 4 节所述保存到 Apple 健康；放弃训练时记录会被丢弃。关闭“Apple 健康”或“熄屏计数”，或不授权时，不会运行会话，锁屏后口袋训练会自动暂停。</td></tr>
           <tr><td>语音播报</td><td>播报次数和挑战提示。</td><td>由 iOS 在本机合成语音。本应用不使用麦克风。</td></tr>
           <tr><td>每日提醒（可选）</td><td>在你设定的时间提醒你训练。</td><td>由系统在本机安排的本地通知。提醒文字可能在锁屏上可见；你可以随时在应用内或系统设置中关闭。</td></tr>
           <tr><td>购买（蹲咚 Pro、打赏）</td><td>解锁 Pro、支持开发者。</td><td>付款完全由 Apple 处理，我们看不到你的付款信息或 Apple ID。Pro 是一次性买断，不是订阅，不会自动续费。本应用通过 Apple 的 StoreKit 在本机确认购买状态，并在本机记住是否已解锁。Apple 只向开发者提供不含个人身份的销售报表。</td></tr>
+<tr><td>公开价格公告</td><td>在付费页显示当前的 Pro 价格，以及（如有）首发折扣信息。</td><td>当前价格来自 Apple 的 StoreKit。应用可能从我们的公开网页下载一份很小的静态文本文件，用来显示原价划线和促销标签。该请求不包含个人信息、设备标识或训练数据，也不会上传任何内容；我们没有接收你数据的服务器。</td></tr>
         </tbody>
       </table>
       <p class="notice"><strong>关于面部数据：</strong>本应用<strong>不收集、不检测、不分析、不保存、不上传任何面部数据</strong>。只使用 Apple Vision 的 <code>VNDetectHumanBodyPoseRequest</code>（人体姿态）和 <code>VNDetectHumanHandPoseRequest</code>（手部姿态），不调用 <code>VNDetectFaceRectanglesRequest</code>、<code>VNDetectFaceLandmarksRequest</code>、<code>VNDetectFaceCaptureQualityRequest</code> 或其他任何人脸检测、识别接口，也不用 <code>CIDetector</code> 识别人脸。</p>
 
       <h2>4. Apple 健康的具体说明</h2>
       <ul>
-        <li><strong>只写不读。</strong>本应用只申请写入体能训练的权限，不读取 Apple 健康里的任何数据；没有可授予的读取权限，健康数据也不会用于广告或统计。</li>
-        <li><strong>iPhone：</strong>写入的记录包含训练类型（力量训练）、开始时间、结束时间和时长。不写入深蹲次数、心率或卡路里。</li>
-        <li><strong>Apple Watch：</strong>写入的记录包含同样的字段，并额外把这次训练的深蹲次数作为自定义元数据存在该条训练记录上。“健康”App 界面不显示这个字段，但它会随记录保存在你的健康数据库中，你授权过的其他 App 可以读到。</li>
-        <li><strong>iOS 26 的熄屏计数：</strong>体能训练会话只用于锁屏后继续计数，本身不会生成健康记录，也不读取健康数据。</li>
-        <li><strong>不授权时：</strong>不会写入健康；锁屏后口袋训练会自动暂停。</li>
+        <li><strong>读取什么。</strong>在 iPhone 和 iPad 上，蹲咚申请写入“体能训练”和“活动能量”，并且只申请读取“活动能量”。读取权限只用于在训练总结中显示刚记录的这次训练消耗的活动能量，不读取其他任何健康数据。Apple Watch 端只写入体能训练，不读取任何数据。健康数据不会用于广告或统计，蹲咚也不会把它传出你的设备。</li>
+        <li><strong>iPhone 和 iPad：</strong>写入的记录包含训练类型（功能性力量训练）、开始时间、结束时间、时长和活动能量（仅在系统测得时写入，蹲咚不估算卡路里）。深蹲次数、组数、每组次数和训练模式（口袋或相机）作为自定义元数据存在该条记录上。“健康”App 界面不显示这些字段，但它们会随记录保存在你的健康数据库中，你授权过的其他 App 可以读到。不写入心率。</li>
+        <li><strong>Apple Watch：</strong>写入的记录包含训练类型（功能性力量训练）、开始时间、结束时间和时长，并把这次训练的深蹲次数作为自定义元数据存在该条训练记录上。“健康”App 界面不显示这个字段，但它会随记录保存在你的健康数据库中，你授权过的其他 App 可以读到。</li>
+        <li><strong>iOS 26 的口袋训练：</strong>体能训练会话会实时记录这次训练，并在结束时保存到 Apple 健康；只有打开“Apple 健康”时才会运行。正因为训练在被记录，锁屏后才能继续计数。</li>
+        <li><strong>不授权时：</strong>不会写入健康，锁屏后口袋训练会自动暂停，训练仍会保存在本机历史中。没有保存到健康时，训练总结会提示你。</li>
       </ul>
 
       <h2>5. 你主动分享的信息</h2>
@@ -184,7 +187,7 @@
 
       <h2>6. 无账号、无广告、无统计、无追踪</h2>
       <p>本应用不需要注册账号，没有接入广告 SDK、第三方统计或崩溃上报 SDK，也没有跨应用追踪。不使用广告标识符（IDFA），不请求 App 追踪透明度权限，不含社交登录或 Game Center。我们没有接收你数据的服务器，也不会出售、出租或向任何人提供你的信息。</p>
-      <p>由于我们不运营服务器，因此不存在由我们进行的个人信息跨境传输。如果你开启了 iCloud 或电脑备份，本应用的本地数据会按 Apple 的设置一起备份，这不是向我们传输数据。</p>
+      <p>由于我们不运营接收你数据的服务器，因此不存在由我们进行的个人信息跨境传输。如果你开启了 iCloud 或电脑备份，本应用的本地数据会按 Apple 的设置一起备份，这不是向我们传输数据。</p>
 
       <h2>7. 权限</h2>
       <table>
@@ -192,7 +195,7 @@
         <tbody>
           <tr><td>相机</td><td>开始相机模式、伙伴趣味挑战或双人比拼时。</td><td>这些功能无法使用，口袋模式不受影响。</td></tr>
           <tr><td>运动与健身</td><td>开始口袋模式时。</td><td>口袋模式无法使用，相机模式不受影响。</td></tr>
-          <tr><td>健康（仅写入“体能训练”）</td><td>打开“Apple 健康”开关时；或在 iOS 26 上开启“熄屏计数”后，第一次口袋训练开始前。</td><td>不会写入健康；锁屏后口袋训练自动暂停。</td></tr>
+          <tr><td>健康（写入“体能训练”和“活动能量”；读取“活动能量”）</td><td>打开“Apple 健康”开关时；或在 iOS 26 上同时开启“Apple 健康”和“熄屏计数”后，第一次口袋训练开始前。升级后可能会为“活动能量”再询问一次。</td><td>不会写入健康；锁屏后口袋训练自动暂停。</td></tr>
           <tr><td>通知</td><td>打开“每日提醒”时。</td><td>不会收到提醒。</td></tr>
           <tr><td>Siri 与快捷指令</td><td>第一次使用蹲咚的语音或快捷指令动作时。</td><td>这些动作不可用，应用本身不受影响。</td></tr>
         </tbody>
@@ -223,6 +226,7 @@
       <h2>13. 政策更新</h2>
       <p>如果今后增加账号、云同步、统计、广告或其他会改变数据处理方式的功能，我们会在功能上线前更新本政策、应用内隐私说明和 App Store 隐私信息。</p>
       <p><strong>2.0 的变更：</strong>本版补充了 Apple Watch 应用、伙伴游戏、双人比拼、Pro 与自定义挑战、Siri／快捷指令的说明；并明确区分 iPhone 与 Apple Watch 写入 Apple 健康的具体字段。</p>
+      <p><strong>2026 年 11 月 26 日更新：</strong>在 iPhone 和 iPad 上，训练现在以“功能性力量训练”写入，并附带深蹲次数、组数和活动能量；iOS 26 的口袋训练改为用体能训练会话实时记录。蹲咚现在会读取自己记录的训练的活动能量，用于在总结页显示。体能训练会话只在打开“Apple 健康”时运行。</p>
 
       <h2>14. 联系方式</h2>
       <p>问题或请求：<a href="mailto:genweimi@gmail.com">genweimi@gmail.com</a></p>
